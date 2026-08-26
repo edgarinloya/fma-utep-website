@@ -1848,8 +1848,7 @@ button:focus-visible {
 
 .site-footer {
 
-    background-color:
-        var(--fma-blue-deep);
+    background-color: var(--fma-blue-deep);
 
     color: var(--white);
 
@@ -1878,11 +1877,21 @@ button:focus-visible {
 }
 
 
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+
+    max-width: 300px;
+}
+
+
 .footer-logo {
 
     display: inline-block;
 
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 
     text-decoration: none;
 }
@@ -1892,7 +1901,7 @@ button:focus-visible {
 
     width: auto;
 
-    height: 82px;
+    height: 76px;
 
     display: block;
 
@@ -1913,38 +1922,48 @@ button:focus-visible {
 }
 
 
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
 .footer-column {
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 10px;
+    align-items: flex-start;
+
+    gap: 11px;
 }
 
 
 .footer-column h3 {
 
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 
     color: var(--white);
 
-    font-size: 12px;
+    font-size: 11px;
+
+    font-weight: 700;
 
     text-transform: uppercase;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.5px;
 }
 
 
 .footer-column a {
 
     color:
-        rgba(255, 255, 255, 0.64);
+        rgba(255, 255, 255, 0.66);
 
     text-decoration: none;
 
     font-size: 13px;
+
+    line-height: 1.4;
 }
 
 
@@ -1953,6 +1972,66 @@ button:focus-visible {
     color: var(--white);
 }
 
+
+/* =========================================================
+   SOCIAL / CONTACT LINKS
+========================================================= */
+
+.footer-social-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.footer-social-link svg {
+
+    width: 17px;
+
+    height: 17px;
+
+    flex-shrink: 0;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    opacity: 0.78;
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+
+.footer-social-link .icon-fill {
+
+    fill: currentColor;
+
+    stroke: none;
+}
+
+
+.footer-social-link:hover svg {
+
+    opacity: 1;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
 
 .footer-bottom {
 
@@ -2464,14 +2543,15 @@ button:focus-visible {
 }
 
 
-/* HERO */
+/* =========================================================
+   JOIN INTRO
+========================================================= */
 
-.join-hero {
+.join-intro {
 
     padding:
-        120px
-        30px
-        110px;
+        95px
+        30px;
 
     background:
         linear-gradient(
@@ -2482,7 +2562,23 @@ button:focus-visible {
 }
 
 
-.join-hero h1 {
+.join-intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.95fr
+        1.05fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.join-intro-content h1 {
+
+    max-width: 600px;
 
     color: var(--text-dark);
 
@@ -2491,23 +2587,23 @@ button:focus-visible {
         "Times New Roman",
         serif;
 
-    font-size: 70px;
+    font-size: 62px;
 
-    line-height: 1;
+    line-height: 1.04;
 }
 
 
-.join-hero-description {
+.join-intro-description {
 
-    max-width: 680px;
+    max-width: 600px;
 
-    margin-top: 25px;
+    margin-top: 24px;
 
     color: var(--text-body);
 
-    font-size: 19px;
+    font-size: 18px;
 
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 
@@ -2515,13 +2611,14 @@ button:focus-visible {
 
     display: inline-block;
 
-    margin-top: 35px;
+    margin-top: 32px;
 
     padding:
         14px
-        25px;
+        24px;
 
-    background-color: var(--fma-blue);
+    background-color:
+        var(--fma-blue);
 
     color: var(--white);
 
@@ -2549,17 +2646,115 @@ button:focus-visible {
 }
 
 
-/* JOIN HEADINGS */
+/* JOIN IMAGE */
 
-.join-section-heading {
+.join-intro-image {
 
-    max-width: 720px;
-
-    margin-bottom: 55px;
+    width: 100%;
 }
 
 
-.join-section-heading h2 {
+.join-intro-placeholder {
+
+    width: 100%;
+
+    height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #DCE8F7,
+            #C6D9EF
+        );
+
+    border-radius: 5px;
+
+    box-shadow:
+        var(--shadow-soft);
+}
+
+
+.join-intro-image img {
+
+    width: 100%;
+
+    height: 430px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    box-shadow:
+        var(--shadow-soft);
+}
+
+/* =========================================================
+   HOW TO JOIN
+========================================================= */
+
+.join-how {
+
+    padding:
+        105px
+        30px
+        115px;
+
+    background-color:
+        var(--off-white);
+}
+
+
+.join-how-heading {
+
+    max-width: 760px;
+
+    margin:
+        0
+        auto
+        55px;
+
+    text-align: center;
+}
+
+
+.join-how-label {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding:
+        7px
+        14px;
+
+    color: var(--fma-blue-deep);
+
+    background-color:
+        var(--fma-blue-light);
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+
+.join-how-heading h2 {
 
     color: var(--text-dark);
 
@@ -2568,14 +2763,20 @@ button:focus-visible {
         "Times New Roman",
         serif;
 
-    font-size: 46px;
+    font-size: 48px;
+
+    line-height: 1.1;
 }
 
 
-.join-section-heading
-> p:last-child {
+.join-how-heading > p {
 
-    margin-top: 15px;
+    max-width: 650px;
+
+    margin:
+        15px
+        auto
+        0;
 
     color: var(--text-body);
 
@@ -2585,165 +2786,91 @@ button:focus-visible {
 }
 
 
-/* BENEFITS */
+/* HOW TO JOIN CARDS */
 
-.join-benefits {
-
-    background-color: var(--white);
-
-    padding:
-        105px
-        30px;
-}
-
-
-.join-benefit-grid {
+.join-how-grid {
 
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 26px;
 }
 
 
-.join-benefit-card {
+.join-how-card {
 
-    min-height: 245px;
+    min-height: 330px;
 
-    padding: 30px;
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
 
     background-color:
-        var(--fma-blue-soft);
-
-    border-top:
-        3px solid
-        var(--fma-blue);
-}
-
-
-.join-benefit-card span {
-
-    color: var(--fma-blue);
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-
-.join-benefit-card h3 {
-
-    margin-top: 28px;
-
-    color: var(--text-dark);
-
-    font-size: 19px;
-}
-
-
-.join-benefit-card p {
-
-    margin-top: 14px;
-
-    color: var(--text-body);
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* MEMBERSHIP */
-
-.membership-options {
-
-    background-color:
-        var(--fma-blue-light);
-
-    padding:
-        105px
-        30px;
-}
-
-
-.membership-grid {
-
-    max-width: 850px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 24px;
-}
-
-
-.membership-card {
-
-    position: relative;
-
-    padding: 40px;
-
-    background-color: var(--white);
+        var(--white);
 
     border:
         1px solid
         var(--border);
 
+    border-radius: 8px;
+
     box-shadow:
         var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 
-.membership-featured {
+.join-how-card:hover {
 
-    border:
-        2px solid
-        var(--fma-blue);
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--shadow-card);
 }
 
 
-.membership-badge {
+.join-how-number {
 
-    position: absolute;
+    width: 48px;
 
-    top: -13px;
+    height: 48px;
 
-    right: 25px;
+    display: flex;
 
-    padding:
-        5px
-        12px;
+    align-items: center;
+
+    justify-content: center;
 
     background-color:
-        var(--fma-blue);
+        var(--fma-blue-deep);
 
-    color: var(--white);
+    color:
+        var(--white);
 
-    font-size: 10px;
+    border-radius: 8px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
 
     font-weight: 700;
-
-    letter-spacing: 1px;
 }
 
 
-.membership-type {
+.join-how-card h3 {
 
-    color: var(--fma-blue);
-
-    font-size: 11px;
-
-    letter-spacing: 1.5px;
-}
-
-
-.membership-card h3 {
-
-    margin-top: 10px;
+    margin-top: 22px;
 
     color: var(--text-dark);
 
@@ -2752,47 +2879,37 @@ button:focus-visible {
         "Times New Roman",
         serif;
 
-    font-size: 28px;
+    font-size: 25px;
+
+    line-height: 1.2;
 }
 
 
-.membership-price {
+.join-how-card > p {
 
-    margin-top: 25px;
-
-    color: var(--fma-blue);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 48px;
-}
-
-
-.membership-note {
-
-    margin-top: 10px;
+    margin-top: 12px;
 
     color: var(--text-body);
 
-    font-size: 14px;
+    font-size: 15px;
+
+    line-height: 1.7;
 }
 
 
-.membership-button {
+/* CARD BUTTONS */
+
+.join-how-button {
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding:
+        12px
+        16px;
 
     display: block;
-
-    margin-top: 30px;
-
-    padding: 13px;
-
-    background-color:
-        var(--fma-blue);
-
-    color: var(--white);
 
     text-align: center;
 
@@ -2802,99 +2919,73 @@ button:focus-visible {
 
     font-weight: 700;
 
-    border-radius: 4px;
+    border-radius: 30px;
 }
 
 
-.membership-button:hover {
-
-    background-color:
-        var(--fma-blue-dark);
-}
-
-
-/* JOIN PROCESS */
-
-.join-process {
-
-    background-color: var(--white);
-
-    padding:
-        105px
-        30px;
-}
-
-
-.join-steps {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    border-top:
-        1px solid
-        var(--border);
-}
-
-
-.join-step {
-
-    padding:
-        35px
-        30px
-        20px
-        0;
-}
-
-
-.join-step span {
-
-    color: var(--fma-blue);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 30px;
-}
-
-
-.join-step h3 {
-
-    margin-top: 20px;
-
-    color: var(--text-dark);
-
-    font-size: 18px;
-}
-
-
-.join-step p {
-
-    margin-top: 10px;
-
-    color: var(--text-body);
-
-    font-size: 14px;
-
-    line-height: 1.65;
-}
-
-
-/* JOIN FINAL CTA */
-
-.join-final {
+.join-how-primary {
 
     background-color:
         var(--fma-blue);
 
-    color: var(--white);
+    color:
+        var(--white);
+
+    border:
+        2px solid
+        var(--fma-blue);
+}
+
+
+.join-how-primary:hover {
+
+    background-color:
+        var(--fma-blue-dark);
+
+    border-color:
+        var(--fma-blue-dark);
+}
+
+
+.join-how-outline {
+
+    color:
+        var(--fma-blue);
+
+    background-color:
+        var(--white);
+
+    border:
+        2px solid
+        var(--fma-blue);
+}
+
+
+.join-how-outline:hover {
+
+    color:
+        var(--white);
+
+    background-color:
+        var(--fma-blue);
+}
+
+
+/* =========================================================
+   FINAL JOIN CTA
+========================================================= */
+
+.join-final {
 
     padding:
-        115px
+        105px
         30px;
+
+    background-color:
+        var(--fma-blue);
+
+    color:
+        var(--white);
 
     text-align: center;
 }
@@ -2903,20 +2994,24 @@ button:focus-visible {
 .join-final
 .section-eyebrow {
 
-    color: #C8DAF6;
+    color:
+        #C8DAF6;
 }
 
 
 .join-final h2 {
 
-    color: var(--white);
+    color:
+        var(--white);
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size: 52px;
+    font-size: 50px;
+
+    line-height: 1.1;
 }
 
 
@@ -2924,7 +3019,7 @@ button:focus-visible {
 > .join-container
 > p:not(.section-eyebrow) {
 
-    max-width: 650px;
+    max-width: 680px;
 
     margin:
         20px
@@ -2944,15 +3039,17 @@ button:focus-visible {
 
     display: inline-block;
 
-    margin-top: 35px;
+    margin-top: 34px;
 
     padding:
         14px
         26px;
 
-    background-color: var(--white);
+    color:
+        var(--fma-blue);
 
-    color: var(--fma-blue);
+    background-color:
+        var(--white);
 
     text-decoration: none;
 
@@ -2971,6 +3068,111 @@ button:focus-visible {
 
     transform:
         translateY(-2px);
+}
+
+
+/* =========================================================
+   JOIN PAGE TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .join-intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .join-intro-content {
+
+        max-width: 720px;
+    }
+
+
+    .join-benefit-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .join-how-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .join-how-card {
+
+        min-height: 280px;
+    }
+
+}
+
+
+/* =========================================================
+   JOIN PAGE MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .join-intro,
+    .join-benefits,
+    .join-how,
+    .join-final {
+
+        padding-left: 22px;
+
+        padding-right: 22px;
+    }
+
+
+    .join-intro {
+
+        padding-top: 70px;
+
+        padding-bottom: 70px;
+    }
+
+
+    .join-intro-content h1 {
+
+        font-size: 44px;
+    }
+
+
+    .join-intro-description {
+
+        font-size: 16px;
+    }
+
+
+    .join-intro-placeholder,
+    .join-intro-image img {
+
+        height: 300px;
+    }
+
+
+    .join-benefit-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .join-how-heading h2 {
+
+        font-size: 38px;
+    }
+
+
+    .join-final h2 {
+
+        font-size: 39px;
+    }
+
 }
 
 
