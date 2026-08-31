@@ -1,0 +1,4696 @@
+/* =========================================================
+   FMA UTEP WEBSITE
+   MASTER STYLESHEET
+   =========================================================
+   Part 1: Brand, global styles, navigation, homepage hero,
+   statistics, and Why FMA.
+
+   Primary FMA blue: #003C95
+   ========================================================= */
+
+
+/* =========================================================
+   1. BRAND SYSTEM
+   ========================================================= */
+
+:root {
+    /* Core FMA blues */
+    --fma-blue: #003C95;
+    --fma-blue-mid: #1458B0;
+    --fma-blue-dark: #003078;
+    --fma-blue-deep: #001F50;
+
+    /* Light brand surfaces */
+    --fma-blue-light: #EAF2FC;
+    --fma-blue-soft: #F5F8FD;
+
+    /* Neutrals */
+    --white: #FFFFFF;
+    --off-white: #FAFBFD;
+    --text-dark: #10233F;
+    --text-body: #526174;
+    --text-muted: #7B8796;
+    --border: #DCE4EF;
+
+    /* Layout */
+    --page-width: 1200px;
+    --page-gutter: 30px;
+
+    /* Corners */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+
+    /* Shadows */
+    --shadow-soft: 0 12px 32px rgba(0, 48, 120, 0.08);
+    --shadow-card: 0 16px 40px rgba(0, 48, 120, 0.12);
+
+    /* Motion */
+    --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   2. RESET / GLOBAL
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--white);
+    color: var(--text-dark);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+main {
+    display: block;
+}
+
+img,
+svg {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+}
+
+a {
+    color: inherit;
+    transition:
+        color var(--transition),
+        background-color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(20, 88, 176, 0.35);
+    outline-offset: 4px;
+}
+
+::selection {
+    background-color: var(--fma-blue);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   3. SHARED LAYOUT
+   ========================================================= */
+
+.section-container,
+.hero-container,
+.stats-container,
+.why-fma-container,
+.life-fma-container,
+.events-preview-container,
+.career-container,
+.partners-container,
+.final-cta-container,
+.leadership-hero-container,
+.leadership-container,
+.events-page-container,
+.join-container,
+.resources-container,
+.page-hero-container,
+.footer-container,
+.footer-bottom {
+    width: 100%;
+    max-width: var(--page-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   4. SHARED TYPOGRAPHY
+   ========================================================= */
+
+.section-eyebrow,
+.hero-eyebrow,
+.leadership-kicker,
+.career-label,
+.leader-role,
+.resource-category,
+.join-step-kicker,
+.payment-label,
+.payment-memo-label,
+.payment-method-label {
+    color: var(--fma-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    line-height: 1.1;
+}
+
+.section-description {
+    margin-top: 14px;
+    color: var(--text-body);
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   5. NAVIGATION
+   ========================================================= */
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--fma-blue-deep);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+    min-height: 86px;
+    padding: 0 var(--page-gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+
+/* ---------------------------------------------------------
+   Header logo
+   ---------------------------------------------------------
+   IMPORTANT:
+   No background-color, border-radius, or box-shadow is
+   applied to the image. This prevents the rectangular PNG
+   canvas from becoming the white "eye" shape.
+   --------------------------------------------------------- */
+
+.logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: auto;
+    height: 62px;
+    max-width: 110px;
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   Main navigation links
+   --------------------------------------------------------- */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    position: relative;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+    color: var(--white);
+    font-weight: 700;
+}
+
+.nav-links a.active::after,
+.nav-links a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+    background-color: var(--white);
+    opacity: 0.85;
+}
+
+
+/* ---------------------------------------------------------
+   Navigation actions
+   --------------------------------------------------------- */
+
+.nav-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.member-login {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.member-login:hover {
+    opacity: 0.75;
+}
+
+.join-button {
+    display: inline-block;
+    padding: 11px 20px;
+    background-color: var(--fma-blue);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.join-button:hover {
+    background-color: var(--fma-blue-mid);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   6. HOMEPAGE HERO
+   ========================================================= */
+
+.hero {
+    padding: 100px var(--page-gutter);
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue-light) 0%,
+            var(--white) 100%
+        );
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.hero-text {
+    min-width: 0;
+}
+
+.hero-eyebrow {
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    max-width: 690px;
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 60px;
+    line-height: 1.04;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin-top: 26px;
+    color: var(--text-body);
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+.hero-buttons {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.hero-primary {
+    display: inline-block;
+    padding: 14px 25px;
+    background-color: var(--fma-blue);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 20px rgba(0, 60, 149, 0.18);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-primary:hover {
+    background-color: var(--fma-blue-dark);
+    transform: translateY(-2px);
+}
+
+.hero-secondary {
+    color: var(--fma-blue);
+    border-bottom: 1px solid var(--fma-blue);
+    padding-bottom: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-secondary:hover {
+    color: var(--fma-blue-dark);
+    border-color: var(--fma-blue-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Hero image
+   --------------------------------------------------------- */
+
+.hero-image {
+    width: 100%;
+    min-width: 0;
+}
+
+.hero-image-placeholder {
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(
+            135deg,
+            #DDE9F7,
+            #C9DAEF
+        );
+    color: var(--text-muted);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    font-size: 14px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* =========================================================
+   7. HOMEPAGE STATISTICS
+   ========================================================= */
+
+.stats-section {
+    padding: 45px var(--page-gutter);
+    background-color: var(--fma-blue);
+    color: var(--white);
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+    padding: 10px 25px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-item h2 {
+    margin-bottom: 5px;
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 40px;
+    line-height: 1.1;
+}
+
+.stat-item p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   8. WHY FMA
+   ========================================================= */
+
+.why-fma {
+    padding: 105px var(--page-gutter);
+    background-color: var(--white);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+/* ---------------------------------------------------------
+   Why FMA cards
+   --------------------------------------------------------- */
+
+.feature-card {
+    min-height: 250px;
+    padding: 30px;
+    background-color: var(--fma-blue-soft);
+    border-top: 3px solid var(--fma-blue);
+    transition:
+        background-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.feature-card:hover {
+    background-color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
+}
+
+.feature-number {
+    display: block;
+    margin-bottom: 25px;
+    color: var(--fma-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.feature-card h3 {
+    margin-bottom: 14px;
+    color: var(--text-dark);
+    font-size: 19px;
+    line-height: 1.3;
+}
+
+.feature-card p {
+    color: var(--text-body);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   9. LIFE AT FMA
+   ========================================================= */
+
+.life-fma {
+    padding: 105px var(--page-gutter);
+    background-color: var(--fma-blue-light);
+}
+
+.life-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-rows: 260px 260px;
+    gap: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   Life at FMA cards
+   --------------------------------------------------------- */
+
+.life-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #DCE6F2;
+    border-radius: var(--radius-sm);
+}
+
+.life-card-large {
+    grid-row: span 2;
+}
+
+.life-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: center;
+}
+
+.life-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.life-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ---------------------------------------------------------
+   Image captions
+   --------------------------------------------------------- */
+
+.life-card-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 31, 80, 0.96),
+            rgba(0, 31, 80, 0)
+        );
+    color: var(--white);
+}
+
+.life-card-text p {
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   10. UPCOMING EVENTS — HOMEPAGE
+   ========================================================= */
+
+.events-preview {
+    padding: 105px var(--page-gutter);
+    background-color: var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   Events heading
+   --------------------------------------------------------- */
+
+.events-header {
+    margin-bottom: 45px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.events-header h2 {
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    line-height: 1.1;
+}
+
+.view-events-link {
+    flex-shrink: 0;
+    padding-bottom: 3px;
+    color: var(--fma-blue);
+    border-bottom: 1px solid var(--fma-blue);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.view-events-link:hover {
+    color: var(--fma-blue-dark);
+    border-color: var(--fma-blue-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Event list
+   --------------------------------------------------------- */
+
+.events-grid {
+    border-top: 1px solid var(--border);
+}
+
+.event-card {
+    min-height: 150px;
+    padding: 28px 10px;
+    display: grid;
+    grid-template-columns: 110px 1fr 50px;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 1px solid var(--border);
+    transition: background-color var(--transition);
+}
+
+.event-card:hover {
+    background-color: var(--fma-blue-soft);
+}
+
+
+/* ---------------------------------------------------------
+   Event date
+   --------------------------------------------------------- */
+
+.event-date {
+    text-align: center;
+}
+
+.event-month {
+    display: block;
+    color: var(--fma-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.event-day {
+    display: block;
+    margin-top: 3px;
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    line-height: 1;
+}
+
+
+/* ---------------------------------------------------------
+   Event information
+   --------------------------------------------------------- */
+
+.event-type {
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.event-info {
+    min-width: 0;
+}
+
+.event-info h3 {
+    margin-bottom: 7px;
+    color: var(--text-dark);
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.event-details {
+    color: var(--text-body);
+    font-size: 14px;
+}
+
+.event-location {
+    margin-top: 2px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   Event arrow
+   --------------------------------------------------------- */
+
+.event-arrow {
+    justify-self: end;
+    color: var(--fma-blue);
+    font-size: 28px;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.event-arrow:hover {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   11. CAREER DEVELOPMENT
+   ========================================================= */
+
+.career-section {
+    overflow: hidden;
+    padding: 105px 0 95px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue-deep) 0%,
+            var(--fma-blue-dark) 100%
+        );
+    color: var(--white);
+}
+
+.career-container {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+}
+
+
+/* ---------------------------------------------------------
+   Career heading
+   --------------------------------------------------------- */
+
+.career-heading {
+    margin-bottom: 72px;
+}
+
+.career-heading .section-eyebrow {
+    margin-bottom: 20px;
+    color: #A8C8F4;
+}
+
+.career-heading-row {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: end;
+    gap: 100px;
+}
+
+.career-heading h2 {
+    max-width: 560px;
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 58px;
+    line-height: 1.05;
+}
+
+.career-copy {
+    padding-bottom: 5px;
+}
+
+.career-copy p {
+    max-width: 500px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.career-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.career-link:hover {
+    opacity: 0.72;
+}
+
+
+/* =========================================================
+   12. EMPLOYER LOGO MARQUEE
+   ========================================================= */
+
+.career-companies {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.career-label {
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 11px;
+}
+
+
+/* ---------------------------------------------------------
+   Marquee viewport
+   --------------------------------------------------------- */
+
+.logo-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   Edge fades
+   --------------------------------------------------------- */
+
+.logo-marquee::before,
+.logo-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 70px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.logo-marquee::before {
+    left: 0;
+    background:
+        linear-gradient(
+            to right,
+            var(--fma-blue-deep),
+            transparent
+        );
+}
+
+.logo-marquee::after {
+    right: 0;
+    background:
+        linear-gradient(
+            to left,
+            var(--fma-blue-dark),
+            transparent
+        );
+}
+
+
+/* ---------------------------------------------------------
+   Moving logo track
+   --------------------------------------------------------- */
+
+.logo-track {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    animation: logo-scroll 42s linear infinite;
+}
+
+.logo-marquee:hover .logo-track {
+    animation-play-state: paused;
+}
+
+
+/* ---------------------------------------------------------
+   Employer tiles
+   --------------------------------------------------------- */
+
+.company-logo {
+    width: 235px;
+    height: 105px;
+    margin-right: 30px;
+    padding: 25px 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.company-logo img {
+    width: auto;
+    height: auto;
+    max-width: 165px;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   Individual employer adjustments
+   --------------------------------------------------------- */
+
+.company-logo img[alt="Dell Technologies"] {
+    max-width: 180px;
+}
+
+.company-logo img[alt="Texas Instruments"] {
+    max-width: 180px;
+}
+
+.company-logo img[alt="UTIMCO"] {
+    max-height: 60px;
+}
+
+.company-logo img[alt="Wells Fargo"] {
+    max-height: 57px;
+}
+
+
+/* ---------------------------------------------------------
+   Marquee animation
+   --------------------------------------------------------- */
+
+@keyframes logo-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   13. MEMBER SPOTLIGHT
+   ========================================================= */
+
+.member-spotlight {
+    padding: 105px var(--page-gutter);
+    background-color: var(--fma-blue-light);
+}
+
+.member-spotlight-container {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 80px;
+}
+
+
+/* ---------------------------------------------------------
+   Member photo
+   --------------------------------------------------------- */
+
+.member-photo {
+    min-width: 0;
+}
+
+.member-photo-placeholder {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background-color: #DCE6F2;
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: center;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   Member information
+   --------------------------------------------------------- */
+
+.member-content {
+    min-width: 0;
+}
+
+.member-content h2 {
+    margin-bottom: 30px;
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 44px;
+    line-height: 1.1;
+}
+
+.member-name {
+    color: var(--text-dark);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.member-details {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.member-highlight {
+    margin-top: 20px;
+    color: var(--fma-blue);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.member-story {
+    max-width: 620px;
+    margin-top: 22px;
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.member-link {
+    display: inline-block;
+    margin-top: 28px;
+    padding-bottom: 3px;
+    color: var(--fma-blue);
+    border-bottom: 1px solid var(--fma-blue);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.member-link:hover {
+    color: var(--fma-blue-dark);
+    border-color: var(--fma-blue-dark);
+}
+/* =========================================================
+   14. PARTNERS — HOMEPAGE
+   ========================================================= */
+
+.partners-section {
+    padding: 105px var(--page-gutter);
+    background-color: var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   Partners heading
+   --------------------------------------------------------- */
+
+.partners-header {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.partners-header > div {
+    min-width: 0;
+}
+
+.partners-header h2 {
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    line-height: 1.1;
+}
+
+.partners-description {
+    max-width: 650px;
+    margin-top: 18px;
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.partners-link {
+    flex-shrink: 0;
+    padding-bottom: 3px;
+    color: var(--fma-blue);
+    border-bottom: 1px solid var(--fma-blue);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.partners-link:hover {
+    color: var(--fma-blue-dark);
+    border-color: var(--fma-blue-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Partner logo grid
+   --------------------------------------------------------- */
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.partner-placeholder,
+.partner-logo {
+    min-height: 130px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fma-blue-soft);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+.partner-placeholder:hover,
+.partner-logo:hover {
+    background-color: var(--white);
+    border-color: rgba(0, 60, 149, 0.20);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-3px);
+}
+
+.partner-logo img {
+    width: auto;
+    height: auto;
+    max-width: 180px;
+    max-height: 65px;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   15. FINAL HOMEPAGE CTA
+   ========================================================= */
+
+.final-cta {
+    padding: 115px var(--page-gutter);
+    background-color: var(--fma-blue);
+    color: var(--white);
+    text-align: center;
+}
+
+.final-cta-container {
+    max-width: 850px;
+}
+
+.final-cta .section-eyebrow {
+    color: #C8DAF6;
+}
+
+.final-cta h2 {
+    margin-bottom: 22px;
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 52px;
+    line-height: 1.08;
+}
+
+.final-cta-description {
+    max-width: 680px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.final-cta-details {
+    margin-top: 28px;
+    color: var(--white);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.final-cta-details p {
+    color: var(--white);
+}
+
+.final-cta-buttons {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.final-cta-primary {
+    display: inline-block;
+    padding: 14px 25px;
+    background-color: var(--white);
+    color: var(--fma-blue);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.final-cta-primary:hover {
+    background-color: var(--fma-blue-light);
+    transform: translateY(-2px);
+}
+
+.final-cta-secondary {
+    padding-bottom: 3px;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.final-cta-secondary:hover {
+    border-color: var(--white);
+}
+
+
+/* =========================================================
+   16. SITE FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 70px var(--page-gutter) 25px;
+    background-color: var(--fma-blue-deep);
+    color: var(--white);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+}
+
+
+/* ---------------------------------------------------------
+   Footer brand
+   --------------------------------------------------------- */
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   Footer FMA logo
+   ---------------------------------------------------------
+   No white background.
+   No circular border-radius.
+   No box-shadow.
+   This keeps the logo's original transparent shape.
+   --------------------------------------------------------- */
+
+.footer-logo img {
+    width: auto;
+    height: 76px;
+    max-width: 130px;
+    object-fit: contain;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   Footer columns
+   --------------------------------------------------------- */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.footer-column h3 {
+    margin-bottom: 9px;
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 13px;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: var(--white);
+}
+
+
+/* =========================================================
+   17. FOOTER SOCIAL / CONTACT LINKS
+   ========================================================= */
+
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-social-link svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.78;
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+.footer-social-link .icon-fill {
+    fill: currentColor;
+    stroke: none;
+}
+
+.footer-social-link:hover svg {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+
+/* ---------------------------------------------------------
+   Footer bottom
+   --------------------------------------------------------- */
+
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   18. LEADERSHIP PAGE — HERO
+   ========================================================= */
+
+.leadership-hero {
+    padding: 115px var(--page-gutter) 95px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue-light),
+            var(--white)
+        );
+}
+
+.leadership-hero h1 {
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 68px;
+    line-height: 1;
+}
+
+.leadership-hero p:last-child {
+    max-width: 650px;
+    margin-top: 22px;
+    color: var(--text-body);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   19. LEADERSHIP SECTIONS
+   ========================================================= */
+
+.leadership-section {
+    padding: 105px var(--page-gutter);
+    background-color: var(--white);
+}
+
+.leadership-directors {
+    background-color: var(--fma-blue-soft);
+}
+
+.leadership-section-heading {
+    margin-bottom: 50px;
+}
+
+.leadership-kicker {
+    margin-bottom: 12px;
+}
+
+.leadership-section-heading h2 {
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 44px;
+    line-height: 1.1;
+}
+
+
+/* ---------------------------------------------------------
+   Leadership grids
+   --------------------------------------------------------- */
+
+.executive-grid,
+.director-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 28px;
+}
+
+
+/* =========================================================
+   20. LEADERSHIP CARDS
+   ========================================================= */
+
+.leader-card {
+    min-width: 0;
+    background-color: transparent;
+}
+
+
+/* ---------------------------------------------------------
+   Leader photo
+   --------------------------------------------------------- */
+
+.leader-photo {
+    width: 100%;
+    overflow: hidden;
+    background-color: #DCE6F2;
+    border-radius: var(--radius-sm);
+}
+
+.leader-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.leader-card:hover .leader-photo img {
+    transform: scale(1.025);
+}
+
+.leader-photo-placeholder {
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #DCE6F2;
+    color: var(--text-muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   Leader information
+   --------------------------------------------------------- */
+
+.leader-info {
+    padding: 24px 4px 10px;
+}
+
+.leader-role {
+    color: var(--fma-blue);
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    line-height: 1.5;
+}
+
+.leader-info h3 {
+    margin-top: 7px;
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    line-height: 1.15;
+}
+
+.leader-major {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.leader-description {
+    margin-top: 17px;
+    color: var(--text-body);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.leader-link {
+    display: inline-block;
+    margin-top: 18px;
+    padding-bottom: 2px;
+    color: var(--fma-blue);
+    border-bottom: 1px solid var(--fma-blue);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.leader-link:hover {
+    color: var(--fma-blue-dark);
+    border-color: var(--fma-blue-dark);
+}
+
+
+/* =========================================================
+   21. LEADERSHIP PAGE — CURRENT STRUCTURE NOTES
+   =========================================================
+   The current leadership.html intentionally does not use
+   an advisor section, so old .advisor-* styling has been
+   removed from this rebuilt stylesheet.
+
+   Current page structure:
+
+   Executive Board
+   - President
+   - Vice President of External Affairs
+   - Vice President of Internal Affairs
+   - Treasurer
+   - Secretary
+   - Executive Assistant
+
+   Directors
+   - FSP Director
+   - Social Director
+   - Marketing Director
+   - Professional Development Director
+   - Fundraising Director
+   - Community Service Director
+   - Recruitment Director
+   ========================================================= */
+
+
+/* =========================================================
+   22. GENERIC PAGE HERO
+   =========================================================
+   Available for future standalone pages such as Partners
+   or About without having to create another hero system.
+   ========================================================= */
+
+.page-hero {
+    padding: 115px var(--page-gutter) 95px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue-light),
+            var(--white)
+        );
+}
+
+.page-hero h1 {
+    max-width: 800px;
+    color: var(--text-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 66px;
+    line-height: 1.04;
+}
+
+.page-hero-description {
+    max-width: 720px;
+    margin-top: 24px;
+    color: var(--text-body);
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   23. SHARED SIMPLE TEXT LINK
+   ========================================================= */
+
+.text-link {
+    display: inline-block;
+    padding-bottom: 2px;
+    color: var(--fma-blue);
+    border-bottom: 1px solid var(--fma-blue);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    color: var(--fma-blue-dark);
+    border-color: var(--fma-blue-dark);
+}
+
+
+/* =========================================================
+   24. SHARED CARD HOVER UTILITY
+   ========================================================= */
+
+.hover-card {
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+.hover-card:hover {
+    border-color: rgba(0, 60, 149, 0.20);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   25. SHARED EXTERNAL LINK BEHAVIOR
+   ========================================================= */
+
+a[target="_blank"] {
+    text-underline-offset: 3px;
+}
+
+
+/* =========================================================
+   26. IMAGE PLACEHOLDER UTILITY
+   ========================================================= */
+
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+        linear-gradient(
+            135deg,
+            #DDE9F7,
+            #C9DAEF
+        );
+    color: var(--text-muted);
+    text-align: center;
+}
+
+
+/* =========================================================
+   27. CONTENT DIVIDER
+   ========================================================= */
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+}
+
+
+/* =========================================================
+   28. VISUALLY HIDDEN ACCESSIBILITY UTILITY
+   ========================================================= */
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* =========================================================
+   29. EVENTS PAGE — HERO
+   ========================================================= */
+
+.events-page-hero {
+    padding:
+        115px
+        var(--page-gutter)
+        95px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue-light),
+            var(--white)
+        );
+}
+
+
+.events-page-hero h1 {
+    max-width: 780px;
+
+    color: var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 64px;
+
+    line-height: 1.05;
+}
+
+
+.events-page-hero p:last-child {
+    max-width: 700px;
+
+    margin-top: 22px;
+
+    color: var(--text-body);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   30. EVENTS PAGE — LIVE MINETRACKER SECTION
+   ========================================================= */
+
+.events-live-section {
+    padding:
+        95px
+        var(--page-gutter)
+        110px;
+
+    background-color: var(--white);
+}
+
+
+.events-live-heading {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+.events-live-heading > div {
+    min-width: 0;
+}
+
+
+.events-live-heading h2 {
+    color: var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 44px;
+
+    line-height: 1.1;
+}
+
+
+.events-live-description {
+    max-width: 700px;
+
+    margin-top: 18px;
+
+    color: var(--text-body);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   MineTracker frame
+   --------------------------------------------------------- */
+
+.minetracker-feed {
+    padding:
+        100px
+        var(--page-gutter);
+
+    background-color: var(--white);
+}
+
+
+.minetracker-frame {
+    width: 100%;
+
+    margin-top: 40px;
+
+    overflow: hidden;
+
+    background-color:
+        var(--fma-blue-soft);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius-sm);
+}
+
+
+.minetracker-frame iframe {
+    width: 100%;
+
+    height: 430px;
+
+    display: block;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   31. RESOURCES PAGE
+   =========================================================
+   Current page intentionally begins with the Resource
+   Library itself. The former oversized Resources hero and
+   member-login CTA are no longer part of the design.
+   ========================================================= */
+
+.resources-section {
+    padding:
+        105px
+        var(--page-gutter)
+        115px;
+
+    background-color:
+        var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   Resources heading
+   --------------------------------------------------------- */
+
+.resources-intro {
+    max-width: 760px;
+
+    margin-bottom: 55px;
+}
+
+
+.resources-intro .section-eyebrow {
+    margin-bottom: 12px;
+}
+
+
+.resources-intro h2 {
+    color:
+        var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 46px;
+
+    line-height: 1.1;
+}
+
+
+.resources-intro > p:last-child {
+    margin-top: 16px;
+
+    color:
+        var(--text-body);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   32. RESOURCE GRID
+   ========================================================= */
+
+.resources-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+
+/* ---------------------------------------------------------
+   Resource card
+   --------------------------------------------------------- */
+
+.resource-card {
+    overflow: hidden;
+
+    background-color:
+        var(--white);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius-sm);
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+
+.resource-card:hover {
+    border-color:
+        rgba(0, 60, 149, 0.25);
+
+    box-shadow:
+        var(--shadow-card);
+
+    transform:
+        translateY(-5px);
+}
+
+
+/* =========================================================
+   33. RESOURCE CARD VISUAL
+   ========================================================= */
+
+.resource-card-visual {
+    position: relative;
+
+    min-height: 200px;
+
+    overflow: hidden;
+
+    padding: 28px;
+
+    display: flex;
+
+    align-items: flex-end;
+}
+
+
+.resource-card-visual::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 31, 80, 0.60),
+            rgba(0, 31, 80, 0.02)
+        );
+}
+
+
+.resource-card-visual span {
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        var(--white);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   Resource visual variations
+   --------------------------------------------------------- */
+
+.resource-learning {
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue),
+            var(--fma-blue-mid)
+        );
+}
+
+
+.resource-governance {
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue-deep),
+            var(--fma-blue)
+        );
+}
+
+
+.resource-career {
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue-mid),
+            #72A0DE
+        );
+}
+
+
+/* =========================================================
+   34. RESOURCE CARD CONTENT
+   ========================================================= */
+
+.resource-card-content {
+    padding: 32px;
+}
+
+
+.resource-category {
+    margin-bottom: 10px;
+
+    color:
+        var(--fma-blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.resource-card-content h3 {
+    color:
+        var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+
+    line-height: 1.15;
+}
+
+
+.resource-card-content
+> p:not(.resource-category) {
+    margin-top: 15px;
+
+    color:
+        var(--text-body);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+.resource-link {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding-bottom: 2px;
+
+    color:
+        var(--fma-blue);
+
+    border-bottom:
+        1px solid
+        var(--fma-blue);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.resource-link:hover {
+    color:
+        var(--fma-blue-dark);
+
+    border-color:
+        var(--fma-blue-dark);
+}
+
+
+/* =========================================================
+   35. JOIN PAGE — WHY JOIN FMA
+   ========================================================= */
+
+.join-intro {
+    padding:
+        95px
+        var(--page-gutter);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--fma-blue-light),
+            var(--white)
+        );
+}
+
+
+.join-intro-grid {
+    display: grid;
+
+    grid-template-columns:
+        0.95fr
+        1.05fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.join-intro-content {
+    min-width: 0;
+}
+
+
+.join-intro-content .section-eyebrow {
+    margin-bottom: 15px;
+}
+
+
+.join-intro-content h1 {
+    max-width: 600px;
+
+    color:
+        var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 62px;
+
+    line-height: 1.04;
+}
+
+
+.join-intro-description {
+    max-width: 600px;
+
+    margin-top: 24px;
+
+    color:
+        var(--text-body);
+
+    font-size: 18px;
+
+    line-height: 1.75;
+}
+
+
+.join-hero-button {
+    display: inline-block;
+
+    margin-top: 32px;
+
+    padding:
+        14px
+        24px;
+
+    background-color:
+        var(--fma-blue);
+
+    color:
+        var(--white);
+
+    border-radius:
+        var(--radius-sm);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 60, 149, 0.16);
+}
+
+
+.join-hero-button:hover {
+    background-color:
+        var(--fma-blue-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   36. JOIN PAGE — INTRO IMAGE
+   ========================================================= */
+
+.join-intro-image {
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+.join-intro-placeholder {
+    width: 100%;
+
+    height: 430px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #DCE8F7,
+            #C6D9EF
+        );
+
+    color:
+        var(--text-muted);
+
+    border-radius:
+        var(--radius-md);
+
+    box-shadow:
+        var(--shadow-soft);
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+.join-intro-image img {
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius:
+        var(--radius-md);
+
+    box-shadow:
+        var(--shadow-soft);
+}
+
+
+/* =========================================================
+   37. JOIN PAGE — HOW TO JOIN
+   ========================================================= */
+
+.join-how {
+    padding:
+        105px
+        var(--page-gutter)
+        115px;
+
+    background-color:
+        var(--off-white);
+}
+
+
+.join-how-heading {
+    max-width: 760px;
+
+    margin:
+        0
+        auto
+        65px;
+
+    text-align: center;
+}
+
+
+.join-how-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding:
+        7px
+        14px;
+
+    background-color:
+        var(--fma-blue-light);
+
+    color:
+        var(--fma-blue-deep);
+
+    border-radius:
+        30px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.join-how-heading h2 {
+    color:
+        var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 48px;
+
+    line-height: 1.1;
+}
+
+
+.join-how-heading > p {
+    max-width: 650px;
+
+    margin:
+        15px
+        auto
+        0;
+
+    color:
+        var(--text-body);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   38. JOIN PAGE — INDIVIDUAL STEPS
+   ========================================================= */
+
+.join-step-section {
+    padding:
+        45px
+        0;
+
+    display: grid;
+
+    grid-template-columns:
+        0.75fr
+        1.25fr;
+
+    gap: 75px;
+
+    border-top:
+        1px solid
+        var(--border);
+}
+
+
+.join-step-section:last-child {
+    border-bottom:
+        1px solid
+        var(--border);
+}
+
+
+.join-step-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+
+.join-how-number {
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color:
+        var(--fma-blue-deep);
+
+    color:
+        var(--white);
+
+    border-radius:
+        var(--radius-lg);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.join-step-kicker {
+    margin-bottom: 4px;
+
+    color:
+        var(--fma-blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.join-step-heading h3 {
+    color:
+        var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+
+    line-height: 1.2;
+}
+
+
+.join-step-body {
+    max-width: 680px;
+}
+
+
+.join-step-body > p {
+    color:
+        var(--text-body);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+.join-action-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding:
+        13px
+        22px;
+
+    background-color:
+        var(--fma-blue);
+
+    color:
+        var(--white);
+
+    border-radius:
+        var(--radius-sm);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.join-action-button:hover {
+    background-color:
+        var(--fma-blue-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   39. JOIN PAGE — PAYMENT STEP
+   ========================================================= */
+
+.payment-step {
+    display: block;
+
+    padding:
+        55px
+        0
+        65px;
+}
+
+
+.payment-step .join-step-heading {
+    margin-bottom: 40px;
+}
+
+
+/* ---------------------------------------------------------
+   Membership price area
+   --------------------------------------------------------- */
+
+.payment-intro {
+    padding:
+        35px
+        40px;
+
+    display: grid;
+
+    grid-template-columns:
+        0.65fr
+        1.35fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    background-color:
+        var(--fma-blue-light);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius-md);
+}
+
+
+.payment-label {
+    color:
+        var(--fma-blue);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.payment-price {
+    margin-top: 6px;
+
+    color:
+        var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 64px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.payment-price-note {
+    margin-top: 8px;
+
+    color:
+        var(--text-muted);
+
+    font-size: 13px;
+}
+
+
+.payment-intro-copy p {
+    color:
+        var(--text-body);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.payment-intro-copy p + p {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   40. PAYMENT MEMO
+   ========================================================= */
+
+.payment-memo {
+    margin-top: 28px;
+
+    padding:
+        26px
+        30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    background-color:
+        var(--white);
+
+    border-left:
+        4px solid
+        var(--fma-blue);
+
+    box-shadow:
+        var(--shadow-soft);
+}
+
+
+.payment-memo > div {
+    min-width: 0;
+}
+
+
+.payment-memo-label {
+    color:
+        var(--fma-blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+
+.payment-memo h4 {
+    margin-top: 5px;
+
+    color:
+        var(--text-dark);
+
+    font-size: 20px;
+
+    line-height: 1.3;
+}
+
+
+.payment-memo > p {
+    max-width: 500px;
+
+    color:
+        var(--text-body);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+.payment-memo > p {
+    max-width: 500px;
+    color: var(--text-body);
+    font-size: 14px;
+    line-height: 1.65;
+}
+/* =========================================================
+   41. PAYMENT OPTIONS
+   ========================================================= */
+
+.payment-options {
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* ---------------------------------------------------------
+   Payment card
+   --------------------------------------------------------- */
+
+.payment-card {
+    min-width: 0;
+
+    padding: 32px;
+
+    background-color:
+        var(--white);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius-lg);
+
+    box-shadow:
+        var(--shadow-soft);
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+
+.payment-card:hover {
+    border-color:
+        rgba(0, 60, 149, 0.22);
+
+    box-shadow:
+        var(--shadow-card);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ---------------------------------------------------------
+   Payment card heading
+   --------------------------------------------------------- */
+
+.payment-card-header {
+    text-align: left;
+}
+
+
+.payment-method-label {
+    color:
+        var(--fma-blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.payment-card-header h4 {
+    margin-top: 5px;
+
+    color:
+        var(--text-dark);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 30px;
+
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   42. PAYMENT QR CODES
+   ========================================================= */
+
+.payment-qr {
+    width: 100%;
+
+    max-width: 330px;
+
+    margin:
+        26px
+        auto;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color:
+        var(--white);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius-md);
+}
+
+
+.payment-qr img {
+    width: 100%;
+
+    height: auto;
+
+    max-height: 330px;
+
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   Payment instructions
+   --------------------------------------------------------- */
+
+.payment-card-description {
+    color:
+        var(--text-body);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.payment-card-reminder {
+    margin-top: 18px;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    color:
+        var(--fma-blue-dark);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   43. PAYMENT NOTICE
+   ========================================================= */
+
+.payment-notice {
+    margin-top: 28px;
+
+    padding:
+        16px
+        20px;
+
+    background-color:
+        var(--fma-blue-soft);
+
+    color:
+        var(--text-body);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius-sm);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.payment-notice strong {
+    color:
+        var(--text-dark);
+}
+
+
+/* =========================================================
+   44. MEMBERSHIP VERIFICATION
+   ========================================================= */
+
+.join-complete {
+    padding-top: 55px;
+}
+
+
+.verification-note {
+    margin-top: 20px;
+
+    padding:
+        18px
+        20px;
+
+    background-color:
+        var(--fma-blue-light);
+
+    color:
+        var(--fma-blue-dark);
+
+    border-left:
+        4px solid
+        var(--fma-blue);
+
+    font-weight: 700;
+
+    line-height: 1.65;
+}
+
+
+.join-text-link {
+    display: inline-block;
+
+    margin-top: 24px;
+
+    padding-bottom: 2px;
+
+    color:
+        var(--fma-blue);
+
+    border-bottom:
+        1px solid
+        var(--fma-blue);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.join-text-link:hover {
+    color:
+        var(--fma-blue-dark);
+
+    border-color:
+        var(--fma-blue-dark);
+}
+
+
+/* =========================================================
+   45. RESPONSIVE SYSTEM — LARGE TABLETS / SMALL LAPTOPS
+   =========================================================
+   Instead of maintaining separate responsive rules for
+   every page, the rebuilt stylesheet now consolidates
+   them into a small number of breakpoints.
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    /* -----------------------------------------------------
+       Navigation
+       ----------------------------------------------------- */
+
+    .nav-container {
+        flex-wrap: wrap;
+
+        padding-top: 10px;
+
+        padding-bottom: 10px;
+    }
+
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        padding:
+            10px
+            0
+            5px;
+
+        justify-content: center;
+
+        border-top:
+            1px solid
+            rgba(255, 255, 255, 0.08);
+    }
+
+
+    /* -----------------------------------------------------
+       Homepage hero
+       ----------------------------------------------------- */
+
+    .hero-container {
+        grid-template-columns:
+            1fr;
+
+        gap: 50px;
+    }
+
+
+    .hero-text {
+        max-width: 780px;
+    }
+
+
+    /* -----------------------------------------------------
+       Why FMA
+       ----------------------------------------------------- */
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* -----------------------------------------------------
+       Life at FMA
+       ----------------------------------------------------- */
+
+    .life-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-template-rows:
+            340px
+            250px
+            250px;
+    }
+
+
+    .life-card-large {
+        grid-column:
+            span 2;
+
+        grid-row:
+            auto;
+    }
+
+
+    /* -----------------------------------------------------
+       Career
+       ----------------------------------------------------- */
+
+    .career-heading-row {
+        grid-template-columns:
+            1fr;
+
+        gap: 30px;
+    }
+
+
+    .career-copy p {
+        max-width: 720px;
+    }
+
+
+    /* -----------------------------------------------------
+       Member spotlight
+       ----------------------------------------------------- */
+
+    .member-spotlight-container {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 50px;
+    }
+
+
+    /* -----------------------------------------------------
+       Partners
+       ----------------------------------------------------- */
+
+    .partners-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* -----------------------------------------------------
+       Leadership
+       ----------------------------------------------------- */
+
+    .executive-grid,
+    .director-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* -----------------------------------------------------
+       Resources
+       ----------------------------------------------------- */
+
+    .resources-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* -----------------------------------------------------
+       Footer
+       ----------------------------------------------------- */
+
+    .footer-container {
+        grid-template-columns:
+            2fr
+            1fr
+            1fr;
+
+        gap: 45px;
+    }
+
+
+    .footer-column:last-child {
+        grid-column:
+            2;
+    }
+
+}
+
+
+/* =========================================================
+   46. RESPONSIVE SYSTEM — TABLETS
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    /* -----------------------------------------------------
+       Join intro
+       ----------------------------------------------------- */
+
+    .join-intro-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 45px;
+    }
+
+
+    .join-intro-content {
+        max-width: 720px;
+    }
+
+
+    /* -----------------------------------------------------
+       Join steps
+       ----------------------------------------------------- */
+
+    .join-step-section {
+        grid-template-columns:
+            1fr;
+
+        gap: 28px;
+    }
+
+
+    .payment-step {
+        display: block;
+    }
+
+
+    /* -----------------------------------------------------
+       Membership price
+       ----------------------------------------------------- */
+
+    .payment-intro {
+        grid-template-columns:
+            1fr;
+
+        gap: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       Payment memo
+       ----------------------------------------------------- */
+
+    .payment-memo {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap: 15px;
+    }
+
+
+    .payment-memo > p {
+        max-width: 650px;
+    }
+
+}
+
+
+/* =========================================================
+   47. RESPONSIVE SYSTEM — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------------------
+       Global mobile spacing
+       ----------------------------------------------------- */
+
+    :root {
+        --page-gutter: 22px;
+    }
+
+
+    /* -----------------------------------------------------
+       Navigation
+       ----------------------------------------------------- */
+
+    .nav-container {
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+
+    .logo img {
+        height: 54px;
+
+        max-width: 95px;
+    }
+
+
+    .member-login {
+        display: none;
+    }
+
+
+    .join-button {
+        padding:
+            10px
+            15px;
+
+        font-size: 13px;
+    }
+
+
+    .nav-links {
+        gap: 17px;
+
+        overflow-x: auto;
+
+        justify-content:
+            flex-start;
+
+        padding-bottom: 8px;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling:
+            touch;
+    }
+
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .nav-links a {
+        flex-shrink: 0;
+
+        font-size: 13px;
+
+        white-space: nowrap;
+    }
+
+
+    .nav-links a.active::after,
+    .nav-links a[aria-current="page"]::after {
+        bottom: -5px;
+    }
+
+
+    /* -----------------------------------------------------
+       Homepage hero
+       ----------------------------------------------------- */
+
+    .hero {
+        padding-top: 70px;
+
+        padding-bottom: 70px;
+    }
+
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+
+    .hero-buttons {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap: 18px;
+    }
+
+
+    .hero-image-placeholder,
+    .hero-image img {
+        height: 300px;
+    }
+
+
+    /* -----------------------------------------------------
+       Shared headings
+       ----------------------------------------------------- */
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+
+    .section-heading h2,
+    .events-header h2,
+    .partners-header h2,
+    .resources-intro h2 {
+        font-size: 36px;
+    }
+
+
+    .section-description {
+        font-size: 17px;
+    }
+
+
+    /* -----------------------------------------------------
+       Statistics
+       ----------------------------------------------------- */
+
+    .stats-section {
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+
+    .stats-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        row-gap: 28px;
+    }
+
+
+    .stat-item:nth-child(2) {
+        border-right:
+            none;
+    }
+
+
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+        padding-top:
+            20px;
+
+        border-top:
+            1px solid
+            rgba(255, 255, 255, 0.15);
+    }
+
+
+    /* -----------------------------------------------------
+       Why FMA
+       ----------------------------------------------------- */
+
+    .feature-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* -----------------------------------------------------
+       Life at FMA
+       ----------------------------------------------------- */
+
+    .life-grid {
+        grid-template-columns:
+            1fr;
+
+        grid-template-rows:
+            repeat(5, 280px);
+    }
+
+
+    .life-card-large {
+        grid-column:
+            auto;
+    }
+
+
+    /* -----------------------------------------------------
+       Events
+       ----------------------------------------------------- */
+
+    .events-header,
+    .events-live-heading,
+    .partners-header {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+
+    .event-card {
+        grid-template-columns:
+            72px
+            1fr
+            30px;
+
+        gap: 16px;
+
+        padding-left: 0;
+
+        padding-right: 0;
+    }
+
+
+    .event-day {
+        font-size: 34px;
+    }
+
+
+    /* -----------------------------------------------------
+       Career section
+       ----------------------------------------------------- */
+
+    .career-section {
+        padding-top: 80px;
+
+        padding-bottom: 80px;
+    }
+
+
+    .career-heading h2 {
+        font-size: 44px;
+    }
+
+
+    .company-logo {
+        width: 190px;
+
+        height: 95px;
+
+        margin-right: 20px;
+
+        padding:
+            22px
+            25px;
+    }
+
+
+    /* -----------------------------------------------------
+       Member spotlight
+       ----------------------------------------------------- */
+
+    .member-spotlight-container {
+        grid-template-columns:
+            1fr;
+
+        gap: 40px;
+    }
+
+
+    .member-photo-placeholder,
+    .member-photo img {
+        height: 420px;
+    }
+
+
+    /* -----------------------------------------------------
+       Partners
+       ----------------------------------------------------- */
+
+    .partners-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* -----------------------------------------------------
+       Leadership
+       ----------------------------------------------------- */
+
+    .executive-grid,
+    .director-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* -----------------------------------------------------
+       Resources
+       ----------------------------------------------------- */
+
+    .resources-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .resource-card-visual {
+        min-height: 165px;
+    }
+
+
+    /* -----------------------------------------------------
+       Footer
+       ----------------------------------------------------- */
+
+    .footer-container {
+        grid-template-columns:
+            1fr;
+
+        gap: 35px;
+    }
+
+
+    .footer-column:last-child {
+        grid-column:
+            auto;
+    }
+
+
+    .footer-logo img {
+        height: 68px;
+
+        max-width: 115px;
+    }
+
+
+    /* -----------------------------------------------------
+       Page heroes
+       ----------------------------------------------------- */
+
+    .leadership-hero,
+    .events-page-hero,
+    .page-hero {
+        padding-top: 80px;
+
+        padding-bottom: 70px;
+    }
+
+
+    .leadership-hero h1,
+    .events-page-hero h1,
+    .page-hero h1 {
+        font-size: 47px;
+    }
+
+
+    /* -----------------------------------------------------
+       MineTracker
+       ----------------------------------------------------- */
+
+    .minetracker-frame iframe {
+        height: 380px;
+    }
+
+
+    /* -----------------------------------------------------
+       Join intro
+       ----------------------------------------------------- */
+
+    .join-intro {
+        padding-top: 70px;
+
+        padding-bottom: 70px;
+    }
+
+
+    .join-intro-content h1 {
+        font-size: 44px;
+    }
+
+
+    .join-intro-description {
+        font-size: 16px;
+    }
+
+
+    .join-intro-placeholder,
+    .join-intro-image img {
+        height: 300px;
+    }
+
+
+    /* -----------------------------------------------------
+       Join section
+       ----------------------------------------------------- */
+
+    .join-how {
+        padding-top: 80px;
+
+        padding-bottom: 85px;
+    }
+
+
+    .join-how-heading {
+        margin-bottom: 50px;
+    }
+
+
+    .join-how-heading h2 {
+        font-size: 38px;
+    }
+
+
+    .join-step-section {
+        padding:
+            38px
+            0;
+    }
+
+
+    /* -----------------------------------------------------
+       Payment price
+       ----------------------------------------------------- */
+
+    .payment-intro {
+        padding:
+            28px
+            22px;
+    }
+
+
+    .payment-price {
+        font-size: 54px;
+    }
+
+
+    /* -----------------------------------------------------
+       Payment options
+       ----------------------------------------------------- */
+
+    .payment-options {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .payment-card {
+        padding:
+            26px
+            22px;
+    }
+
+
+    .payment-qr {
+        max-width: 290px;
+    }
+
+}
+/* =========================================================
+   48. RESPONSIVE SYSTEM — VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    /* -----------------------------------------------------
+       Global
+       ----------------------------------------------------- */
+
+    :root {
+        --page-gutter: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       Navigation
+       ----------------------------------------------------- */
+
+    .nav-container {
+        gap: 14px;
+
+        padding-left: 16px;
+
+        padding-right: 16px;
+    }
+
+
+    .logo img {
+        height: 48px;
+
+        max-width: 86px;
+    }
+
+
+    .join-button {
+        padding:
+            9px
+            13px;
+
+        font-size: 12px;
+    }
+
+
+    .nav-links {
+        gap: 15px;
+    }
+
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       Homepage hero
+       ----------------------------------------------------- */
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+
+    .hero-primary {
+        padding:
+            12px
+            21px;
+    }
+
+
+    .hero-image-placeholder,
+    .hero-image img {
+        height: 260px;
+    }
+
+
+    /* -----------------------------------------------------
+       Statistics
+       ----------------------------------------------------- */
+
+    .stats-container {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .stat-item {
+        padding:
+            18px
+            10px;
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.15);
+    }
+
+
+    .stat-item:nth-child(2),
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+        border-top:
+            none;
+    }
+
+
+    .stat-item:last-child {
+        border-bottom:
+            none;
+    }
+
+
+    .stat-item h2 {
+        font-size: 36px;
+    }
+
+
+    /* -----------------------------------------------------
+       Shared headings
+       ----------------------------------------------------- */
+
+    .section-heading h2,
+    .events-header h2,
+    .partners-header h2,
+    .resources-intro h2 {
+        font-size: 32px;
+    }
+
+
+    .section-description {
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       Feature cards
+       ----------------------------------------------------- */
+
+    .feature-card {
+        min-height: 0;
+
+        padding: 26px;
+    }
+
+
+    /* -----------------------------------------------------
+       Life at FMA
+       ----------------------------------------------------- */
+
+    .life-grid {
+        grid-template-rows:
+            repeat(5, 240px);
+    }
+
+
+    .life-card-text {
+        padding: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       Events
+       ----------------------------------------------------- */
+
+    .event-card {
+        grid-template-columns:
+            60px
+            1fr;
+
+        gap: 14px;
+    }
+
+
+    .event-arrow {
+        display: none;
+    }
+
+
+    .event-day {
+        font-size: 31px;
+    }
+
+
+    .event-info h3 {
+        font-size: 18px;
+    }
+
+
+    .event-details {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       Career
+       ----------------------------------------------------- */
+
+    .career-heading h2 {
+        font-size: 38px;
+    }
+
+
+    .career-copy p {
+        font-size: 15px;
+    }
+
+
+    .company-logo {
+        width: 175px;
+
+        height: 90px;
+
+        margin-right: 16px;
+
+        padding:
+            20px
+            22px;
+    }
+
+
+    .company-logo img {
+        max-width: 140px;
+
+        max-height: 44px;
+    }
+
+
+    /* -----------------------------------------------------
+       Member spotlight
+       ----------------------------------------------------- */
+
+    .member-content h2 {
+        font-size: 36px;
+    }
+
+
+    .member-photo-placeholder,
+    .member-photo img {
+        height: 360px;
+    }
+
+
+    /* -----------------------------------------------------
+       Final CTA
+       ----------------------------------------------------- */
+
+    .final-cta {
+        padding-top: 75px;
+
+        padding-bottom: 75px;
+    }
+
+
+    .final-cta h2 {
+        font-size: 36px;
+    }
+
+
+    .final-cta-description {
+        font-size: 16px;
+    }
+
+
+    .final-cta-buttons {
+        flex-direction:
+            column;
+
+        gap: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       Footer
+       ----------------------------------------------------- */
+
+    .site-footer {
+        padding-top: 55px;
+    }
+
+
+    .footer-logo img {
+        height: 60px;
+
+        max-width: 105px;
+    }
+
+
+    .footer-bottom {
+        margin-top: 38px;
+    }
+
+
+    /* -----------------------------------------------------
+       Leadership
+       ----------------------------------------------------- */
+
+    .leadership-hero h1,
+    .events-page-hero h1,
+    .page-hero h1 {
+        font-size: 40px;
+    }
+
+
+    .leadership-section-heading h2 {
+        font-size: 36px;
+    }
+
+
+    .leader-info h3 {
+        font-size: 24px;
+    }
+
+
+    .leader-description {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       Events page
+       ----------------------------------------------------- */
+
+    .events-page-hero p:last-child {
+        font-size: 16px;
+    }
+
+
+    .events-live-heading h2 {
+        font-size: 36px;
+    }
+
+
+    .minetracker-frame iframe {
+        height: 340px;
+    }
+
+
+    /* -----------------------------------------------------
+       Resources
+       ----------------------------------------------------- */
+
+    .resource-card-content {
+        padding: 26px;
+    }
+
+
+    .resource-card-content h3 {
+        font-size: 24px;
+    }
+
+
+    .resource-card-visual {
+        min-height: 145px;
+
+        padding: 24px;
+    }
+
+
+    /* -----------------------------------------------------
+       Join intro
+       ----------------------------------------------------- */
+
+    .join-intro-content h1 {
+        font-size: 39px;
+    }
+
+
+    .join-intro-description {
+        font-size: 15px;
+    }
+
+
+    .join-intro-placeholder,
+    .join-intro-image img {
+        height: 260px;
+    }
+
+
+    /* -----------------------------------------------------
+       How to join
+       ----------------------------------------------------- */
+
+    .join-how-heading h2 {
+        font-size: 34px;
+    }
+
+
+    .join-how-heading > p {
+        font-size: 15px;
+    }
+
+
+    .join-step-heading {
+        gap: 15px;
+    }
+
+
+    .join-how-number {
+        width: 43px;
+
+        height: 43px;
+
+        font-size: 19px;
+    }
+
+
+    .join-step-heading h3 {
+        font-size: 24px;
+    }
+
+
+    .join-step-body > p {
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       Membership price
+       ----------------------------------------------------- */
+
+    .payment-intro {
+        padding:
+            24px
+            20px;
+    }
+
+
+    .payment-price {
+        font-size: 48px;
+    }
+
+
+    /* -----------------------------------------------------
+       Payment memo
+       ----------------------------------------------------- */
+
+    .payment-memo {
+        padding:
+            22px
+            20px;
+    }
+
+
+    .payment-memo h4 {
+        font-size: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       Payment cards
+       ----------------------------------------------------- */
+
+    .payment-card {
+        padding:
+            24px
+            18px;
+    }
+
+
+    .payment-card-header h4 {
+        font-size: 27px;
+    }
+
+
+    .payment-qr {
+        max-width: 260px;
+
+        padding: 14px;
+    }
+
+
+    .payment-notice {
+        padding:
+            15px
+            17px;
+    }
+
+}
+
+
+/* =========================================================
+   49. ACCESSIBILITY — REDUCED MOTION
+   =========================================================
+   Visitors who ask their operating system for reduced
+   motion should not receive long animations or transitions.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior:
+            auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:
+            auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        transition-delay:
+            0ms !important;
+    }
+
+
+    .logo-track {
+        animation:
+            none;
+    }
+
+
+    .life-card:hover img,
+    .leader-card:hover .leader-photo img {
+        transform:
+            none;
+    }
+
+}
+
+
+/* =========================================================
+   50. POINTER / TOUCH DEVICE IMPROVEMENTS
+   =========================================================
+   Hover animations are useful with a mouse, but they should
+   not create strange sticky states on touchscreens.
+   ========================================================= */
+
+@media (hover: none) {
+
+    .feature-card:hover,
+    .partner-placeholder:hover,
+    .partner-logo:hover,
+    .payment-card:hover,
+    .resource-card:hover,
+    .hover-card:hover {
+        transform:
+            none;
+    }
+
+
+    .logo-marquee:hover .logo-track {
+        animation-play-state:
+            running;
+    }
+
+}
+
+
+/* =========================================================
+   51. HIGH-CONTRAST / FORCED-COLOR SUPPORT
+   ========================================================= */
+
+@media (forced-colors: active) {
+
+    .join-button,
+    .hero-primary,
+    .final-cta-primary,
+    .join-action-button {
+        border:
+            1px solid
+            ButtonText;
+    }
+
+
+    .feature-card,
+    .resource-card,
+    .payment-card,
+    .partner-placeholder,
+    .partner-logo {
+        border:
+            1px solid
+            CanvasText;
+    }
+
+
+    .payment-memo,
+    .verification-note {
+        border-left:
+            4px solid
+            CanvasText;
+    }
+
+}
+
+
+/* =========================================================
+   52. PRINT STYLES
+   =========================================================
+   These rules are not central to the public site, but they
+   prevent navigation, animated content, and embedded feeds
+   from wasting space if somebody prints a page.
+   ========================================================= */
+
+@media print {
+
+    body {
+        background:
+            var(--white);
+
+        color:
+            #000000;
+    }
+
+
+    .navbar,
+    .site-footer,
+    .hero-buttons,
+    .final-cta-buttons,
+    .join-hero-button,
+    .join-action-button,
+    .join-text-link,
+    .view-events-link,
+    .career-link,
+    .partners-link,
+    .resource-link,
+    .member-link,
+    .event-arrow {
+        display:
+            none !important;
+    }
+
+
+    .hero,
+    .leadership-hero,
+    .events-page-hero,
+    .page-hero,
+    .join-intro,
+    .join-how,
+    .resources-section,
+    .leadership-section,
+    .events-live-section,
+    .partners-section,
+    .member-spotlight {
+        padding:
+            30px
+            0;
+
+        background:
+            var(--white) !important;
+    }
+
+
+    .career-section,
+    .final-cta,
+    .stats-section {
+        background:
+            var(--white) !important;
+
+        color:
+            #000000 !important;
+    }
+
+
+    .career-section *,
+    .final-cta *,
+    .stats-section * {
+        color:
+            #000000 !important;
+    }
+
+
+    .logo-track {
+        animation:
+            none;
+    }
+
+
+    .minetracker-frame {
+        display:
+            none;
+    }
+
+
+    .payment-card,
+    .resource-card,
+    .leader-card,
+    .feature-card {
+        break-inside:
+            avoid;
+    }
+
+}
+
+
+/* =========================================================
+   53. LONG TEXT / OVERFLOW PROTECTION
+   ========================================================= */
+
+.nav-links,
+.hero-text,
+.career-copy,
+.member-content,
+.leader-info,
+.resource-card-content,
+.join-intro-content,
+.join-step-body,
+.payment-card,
+.payment-memo {
+    overflow-wrap:
+        anywhere;
+}
+
+
+.payment-memo h4,
+.payment-card-reminder {
+    word-break:
+        normal;
+}
+
+
+/* =========================================================
+   54. IFRAME SAFETY
+   ========================================================= */
+
+iframe {
+    max-width:
+        100%;
+}
+
+
+/* =========================================================
+   55. MEDIA SAFETY
+   ========================================================= */
+
+video,
+canvas,
+iframe {
+    max-width:
+        100%;
+}
+
+
+/* =========================================================
+   56. IMAGE RENDERING
+   ========================================================= */
+
+.hero-image img,
+.life-card img,
+.member-photo img,
+.leader-photo img,
+.join-intro-image img {
+    background-color:
+        #DCE6F2;
+}
+
+
+/* =========================================================
+   57. FMA LOGO — FINAL OVERRIDE
+   =========================================================
+   Defensive rule placed near the end of the stylesheet.
+
+   This ensures an older duplicate selector or browser cache
+   cannot reintroduce the previous white oval styling.
+
+   IMPORTANT:
+   This removes styling-created white backgrounds.
+   If the actual PNG itself contains white pixels around the
+   logo, the image file must be replaced with a transparent
+   PNG or SVG.
+   ========================================================= */
+
+.logo img,
+.footer-logo img {
+    background:
+        transparent !important;
+
+    background-color:
+        transparent !important;
+
+    border:
+        none !important;
+
+    border-radius:
+        0 !important;
+
+    box-shadow:
+        none !important;
+
+    outline:
+        none;
+}
+
+
+/* =========================================================
+   58. BUTTON CURSOR SUPPORT
+   ========================================================= */
+
+a,
+button,
+.join-button,
+.hero-primary,
+.final-cta-primary,
+.join-action-button {
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   59. EMPTY LINK SAFETY
+   =========================================================
+   Some temporary links such as Member Login currently use
+   href="#". These should not receive any additional styling
+   that would make them appear disabled.
+   ========================================================= */
+
+a[href="#"] {
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   60. SELECTION / TAP IMPROVEMENTS
+   ========================================================= */
+
+a,
+button {
+    -webkit-tap-highlight-color:
+        rgba(0, 60, 149, 0.12);
+}
+
+
+/* =========================================================
+   61. FINAL BODY SAFETY
+   ========================================================= */
+
+body {
+    width:
+        100%;
+
+    max-width:
+        100%;
+}
+
+
+/* =========================================================
+   62. MASTER STYLESHEET COMPLETE
+   =========================================================
+   FMA UTEP
+
+   Structure:
+   01  Brand System
+   02  Reset / Global
+   03  Shared Layout
+   04  Shared Typography
+   05  Navigation
+   06  Homepage Hero
+   07  Statistics
+   08  Why FMA
+   09  Life at FMA
+   10  Homepage Events
+   11  Career Development
+   12  Employer Marquee
+   13  Member Spotlight
+   14  Partners
+   15  Final CTA
+   16  Footer
+   17  Footer Social Links
+   18  Leadership Hero
+   19  Leadership Sections
+   20  Leadership Cards
+   21  Leadership Structure
+   22  Generic Page Hero
+   23  Shared Text Links
+   24  Card Utilities
+   25  External Links
+   26  Image Utilities
+   27  Dividers
+   28  Accessibility Utilities
+   29  Events Hero
+   30  MineTracker
+   31  Resources
+   32  Resource Grid
+   33  Resource Visuals
+   34  Resource Content
+   35  Join Intro
+   36  Join Image
+   37  How to Join
+   38  Join Steps
+   39  Payment Step
+   40  Payment Memo
+   41  Payment Options
+   42  Payment QR Codes
+   43  Payment Notice
+   44  Membership Verification
+   45  Large Tablet Responsive
+   46  Tablet Responsive
+   47  Mobile Responsive
+   48  Small Phone Responsive
+   49  Reduced Motion
+   50  Touch Devices
+   51  High Contrast
+   52  Print Styles
+   53  Overflow Protection
+   54  Iframe Safety
+   55  Media Safety
+   56  Image Rendering
+   57  Logo Final Override
+   58  Cursor Support
+   59  Empty Link Safety
+   60  Tap Improvements
+   61  Body Safety
+   62  End of Stylesheet
+   ========================================================= */
