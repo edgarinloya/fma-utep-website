@@ -938,11 +938,13 @@ select:focus-visible {
     width: 235px;
     height: 105px;
     margin-right: 30px;
-    padding: 25px 30px;
+    padding: 16px 20px;
+
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
     background-color: var(--white);
     border-radius: var(--radius-md);
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
@@ -952,7 +954,7 @@ select:focus-visible {
     width: auto;
     height: auto;
     max-width: 165px;
-    max-height: 50px;
+    max-height: 68px;
     object-fit: contain;
 }
 
@@ -962,19 +964,31 @@ select:focus-visible {
    --------------------------------------------------------- */
 
 .company-logo img[alt="Dell Technologies"] {
-    max-width: 180px;
+    max-width: 205px;
+    max-height: 62px;
 }
 
 .company-logo img[alt="Texas Instruments"] {
-    max-width: 180px;
+    max-width: 205px;
+    max-height: 68px;
+}
+
+.company-logo img[alt="JPMorgan Chase"] {
+    max-width: 195px;
+    max-height: 70px;
 }
 
 .company-logo img[alt="UTIMCO"] {
-    max-height: 60px;
+    max-height: 70px;
 }
 
 .company-logo img[alt="Wells Fargo"] {
-    max-height: 57px;
+    max-height: 68px;
+}
+
+.company-logo img[alt="SMBC"] {
+    max-width: 200px;
+    max-height: 68px;
 }
 
 
