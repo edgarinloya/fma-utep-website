@@ -87,55 +87,221 @@
 
 
 
-    <main>
+<main>
 
+    <!-- =====================================================
+         EVENTS HERO
+    ====================================================== -->
 
-        <!-- =====================================================
-             EVENTS HERO
-        ====================================================== -->
-        <section class="events-page-hero">
+    <section class="events-dashboard-hero">
 
-            <div class="events-page-container">
+        <div class="events-page-container">
+
+            <div class="events-dashboard-hero-content">
 
                 <p class="section-eyebrow">
                     FMA EVENTS
                 </p>
 
                 <h1>
-                    Connect. Learn. Get Involved.
+                    Your Semester,<br>
+                    At a Glance.
                 </h1>
 
-                <p>
-                    Explore upcoming FMA meetings, professional development
-                    workshops, guest speakers, networking opportunities,
-                    corporate visits, service activities, and other
-                    organization events.
+                <p class="events-dashboard-intro">
+                    Stay current on FMA meetings, workshops, employer
+                    events, professional development opportunities,
+                    community service, socials, and more.
                 </p>
+
+                <div class="events-hero-actions">
+
+                    <a
+                        href="#calendar"
+                        class="events-primary-button"
+                    >
+                        View Calendar ↓
+                    </a>
+
+                    <a
+                        href="https://minetracker.utep.edu/organization/fma/events"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="events-secondary-button"
+                    >
+                        FMA on MineTracker ↗
+                    </a>
+
+                </div>
 
             </div>
 
-        </section>
+
+            <div class="events-hero-stat">
+
+                <span class="events-hero-stat-label">
+                    LIVE CALENDAR
+                </span>
+
+                <strong>
+                    Updated from Outlook
+                </strong>
+
+                <p>
+                    Events shown on this page are automatically
+                    synchronized with the FMA calendar.
+                </p>
+
+                <div class="events-live-indicator">
+
+                    <span class="events-live-dot"></span>
+
+                    <span>
+                        Calendar Connected
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
 
-        <!-- =====================================================
-             LIVE MINETRACKER FEED
-        ====================================================== -->
-        <section class="events-live-section">
+    <!-- =====================================================
+         MONTHLY CALENDAR
+    ====================================================== -->
 
-            <div class="events-page-container">
+    <section
+        class="events-calendar-section"
+        id="calendar"
+    >
 
-                <div class="events-live-heading">
+        <div class="events-page-container">
 
-                    <div>
+
+            <div class="events-calendar-heading">
+
+                <div>
+
+                    <p class="section-eyebrow">
+                        FMA CALENDAR
+                    </p>
+
+                    <h2>
+                        What’s Happening This Month
+                    </h2>
+
+                    <p>
+                        Meetings, workshops, career events, service
+                        opportunities, and everything else happening
+                        across FMA.
+                    </p>
+
+                </div>
+
+
+                <div class="calendar-controls">
+
+                    <button
+                        type="button"
+                        id="calendar-prev"
+                        class="calendar-control-button"
+                        aria-label="Previous month"
+                    >
+                        ←
+                    </button>
+
+                    <button
+                        type="button"
+                        id="calendar-today"
+                        class="calendar-today-button"
+                    >
+                        Today
+                    </button>
+
+                    <button
+                        type="button"
+                        id="calendar-next"
+                        class="calendar-control-button"
+                        aria-label="Next month"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="events-calendar-layout">
+
+
+                <!-- CALENDAR -->
+
+                <div class="calendar-card">
+
+                    <div class="calendar-card-header">
+
+                        <h3 id="calendar-month-title">
+                            Loading Calendar...
+                        </h3>
+
+                        <span class="calendar-sync-label">
+                            Outlook Sync
+                        </span>
+
+                    </div>
+
+
+                    <div class="calendar-weekdays">
+
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+
+                    </div>
+
+
+                    <div
+                        class="calendar-grid"
+                        id="calendar-grid"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <!-- NEXT UP -->
+
+                <aside class="events-agenda">
+
+                    <div class="events-agenda-header">
 
                         <p class="section-eyebrow">
-                            LIVE EVENT FEED
+                            NEXT UP
                         </p>
 
-                        <h2>
-                            Upcoming Events on MineTracker
-                        </h2>
+                        <h3>
+                            Upcoming Events
+                        </h3>
+
+                    </div>
+
+
+                    <div id="events-agenda-list">
+
+                        <p class="calendar-loading">
+                            Loading upcoming events...
+                        </p>
 
                     </div>
 
@@ -143,8 +309,91 @@
                     <a
                         href="https://minetracker.utep.edu/organization/fma/events"
                         target="_blank"
-                        rel="noopener"
-                        class="view-events-link"
+                        rel="noopener noreferrer"
+                        class="agenda-minetracker-link"
+                    >
+                        View official event details →
+                    </a>
+
+                </aside>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EVENT ACCESS
+    ====================================================== -->
+
+    <section class="events-access-section">
+
+        <div class="events-page-container">
+
+            <div class="events-access-grid">
+
+
+                <div class="events-access-copy">
+
+                    <p class="section-eyebrow">
+                        STAY INVOLVED
+                    </p>
+
+                    <h2>
+                        Don’t Miss What’s Next
+                    </h2>
+
+                    <p>
+                        FMA programming changes throughout the semester.
+                        Check the calendar for the latest meetings,
+                        workshops, speakers, career opportunities,
+                        service events, and socials.
+                    </p>
+
+                </div>
+
+
+                <div class="events-access-card">
+
+                    <span>
+                        REGULAR MEETINGS
+                    </span>
+
+                    <strong>
+                        Thursdays · 4:30 PM
+                    </strong>
+
+                    <p>
+                        Woody L. Hunt College of Business<br>
+                        Room 309
+                    </p>
+
+                </div>
+
+
+                <div class="events-access-card">
+
+                    <span>
+                        OFFICIAL REGISTRATION
+                    </span>
+
+                    <strong>
+                        MineTracker
+                    </strong>
+
+                    <p>
+                        View official event listings and participation
+                        details through UTEP's student organization platform.
+                    </p>
+
+                    <a
+                        href="https://minetracker.utep.edu/organization/fma/events"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Open MineTracker ↗
                     </a>
@@ -152,206 +401,59 @@
                 </div>
 
 
-                <p class="events-live-description">
-                    MineTracker is UTEP's official student organization
-                    platform. Select an event below to view official details,
-                    dates, locations, and participation information.
-                </p>
+            </div>
+
+        </div>
+
+    </section>
 
 
-                <div class="minetracker-frame">
 
-                    <iframe
-                        src="https://minetracker.utep.edu/opportunityboard"
-                        title="MineTracker Live Event Feed"
-                        loading="lazy"
-                    >
-                    </iframe>
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
 
-                </div>
+    <section class="final-cta">
+
+        <div class="final-cta-container">
+
+            <p class="section-eyebrow">
+                GET INVOLVED
+            </p>
+
+            <h2>
+                Your Next Opportunity Starts Here
+            </h2>
+
+            <p class="final-cta-description">
+                Show up, meet people, develop your skills, and take
+                advantage of everything FMA has to offer.
+            </p>
+
+
+            <div class="final-cta-buttons">
+
+                <a
+                    href="#calendar"
+                    class="final-cta-primary"
+                >
+                    Explore Events
+                </a>
+
+                <a
+                    href="join.html"
+                    class="final-cta-secondary"
+                >
+                    Join FMA
+                </a>
 
             </div>
 
-        </section>
+        </div>
 
+    </section>
 
-
-        <!-- =====================================================
-             EVENT TYPES
-        ====================================================== -->
-        <section class="why-fma">
-
-            <div class="why-fma-container">
-
-                <div class="section-heading">
-
-                    <p class="section-eyebrow">
-                        WHAT TO EXPECT
-                    </p>
-
-                    <h2>
-                        More Than Weekly Meetings
-                    </h2>
-
-                    <p class="section-description">
-                        FMA events are designed to help members build
-                        professional skills, expand their networks, and
-                        get involved beyond the classroom.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-grid">
-
-
-                    <article class="feature-card">
-
-                        <span class="feature-number">
-                            01
-                        </span>
-
-                        <h3>
-                            Professional Development
-                        </h3>
-
-                        <p>
-                            Workshops focused on finance, Excel,
-                            recruiting preparation, technical skills,
-                            and career readiness.
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="feature-card">
-
-                        <span class="feature-number">
-                            02
-                        </span>
-
-                        <h3>
-                            Guest Speakers
-                        </h3>
-
-                        <p>
-                            Hear from professionals, recruiters,
-                            alumni, and business leaders across
-                            finance and related industries.
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="feature-card">
-
-                        <span class="feature-number">
-                            03
-                        </span>
-
-                        <h3>
-                            Corporate Experiences
-                        </h3>
-
-                        <p>
-                            Visit companies, explore career paths,
-                            and learn directly from professionals
-                            working across the business world.
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="feature-card">
-
-                        <span class="feature-number">
-                            04
-                        </span>
-
-                        <h3>
-                            Community & Social Events
-                        </h3>
-
-                        <p>
-                            Build relationships through service,
-                            fundraisers, socials, and other
-                            opportunities to engage with the
-                            FMA community.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             EVENTS CTA
-        ====================================================== -->
-        <section class="final-cta">
-
-            <div class="final-cta-container">
-
-                <p class="section-eyebrow">
-                    GET INVOLVED
-                </p>
-
-                <h2>
-                    Join Us at an Upcoming Event
-                </h2>
-
-                <p class="final-cta-description">
-                    Whether you're exploring finance, preparing for recruiting,
-                    or looking to meet other students, FMA events are a great
-                    place to start.
-                </p>
-
-
-                <div class="final-cta-details">
-    <p>
-        Thursdays · 4:30 PM
-    </p>
-
-    <p>
-        Woody L. Hunt College of Business · Room 309
-    </p>
-</div>
-
-
-                <div class="final-cta-buttons">
-
-                    <a
-                        href="https://minetracker.utep.edu/organization/fma/events"
-                        target="_blank"
-                        rel="noopener"
-                        class="final-cta-primary"
-                    >
-                        View MineTracker Events
-                    </a>
-
-                    <a
-                        href="join.html"
-                        class="final-cta-secondary"
-                    >
-                        Join FMA
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-    </main>
+</main>
 
 
 
@@ -473,6 +575,7 @@
 
     </footer>
 
+    <script src="js/events-calendar.js"></script>
 </body>
 
 </html>
