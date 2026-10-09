@@ -1,21 +1,5 @@
 [
   {
-    "title": "FMA General Meeting",
-    "start": "2026-10-08T16:30:00-06:00",
-    "end": "2026-10-08T17:30:00-06:00",
-    "location": "BUSN 309",
-    "allDay": false,
-    "uid": "fma-fall26-revised-04-20260903@openai"
-  },
-  {
-    "title": "Speaker: Mr. Diego Leal  \u0013 Quant + AI",
-    "start": "2026-10-08T16:30:00-06:00",
-    "end": "2026-10-08T17:30:00-06:00",
-    "location": "BUSN 309",
-    "allDay": false,
-    "uid": "fma-fall26-revised-23-20261008@openai"
-  },
-  {
     "title": "Technical Workshop (David)",
     "start": "2026-10-12T16:30:00-06:00",
     "end": "2026-10-12T17:30:00-06:00",
