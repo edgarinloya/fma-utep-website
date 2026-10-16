@@ -1,21 +1,5 @@
 [
   {
-    "title": "FMA General Meeting",
-    "start": "2026-10-15T16:30:00-06:00",
-    "end": "2026-10-15T17:30:00-06:00",
-    "location": "BUSN 309",
-    "allDay": false,
-    "uid": "fma-fall26-revised-04-20260903@openai"
-  },
-  {
-    "title": "Speaker: Valeria Perez  \u0013 Sr. Financial Analyst, Helen of Troy",
-    "start": "2026-10-15T16:30:00-06:00",
-    "end": "2026-10-15T17:30:00-06:00",
-    "location": "BUSN 309",
-    "allDay": false,
-    "uid": "fma-fall26-revised-26-20261015@openai"
-  },
-  {
     "title": "Technical Workshop (David)",
     "start": "2026-10-19T16:30:00-06:00",
     "end": "2026-10-19T17:30:00-06:00",
